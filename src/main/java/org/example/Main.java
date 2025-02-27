@@ -1,136 +1,69 @@
 package org.example;
 
-import java.awt.desktop.SystemEventListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        /*int saldo= 50000;
-        int opcion=0;
+        Scanner teclado = new Scanner(System.in);
 
-        System.out.println("CAJERO AUTOMATICO\n");
+        List<String> productos = new ArrayList<>();
+        productos.add("1. Panela");
+        productos.add("2. Arroz");
+        productos.add("3. Chocolate");
+        productos.add("4. Papas");
+        productos.add("5. Cafe");
 
-        do{
+        List<Double> precios = new ArrayList<>();
+        precios.add(2500.0);
+        precios.add(2000.0);
+        precios.add(1600.0);
+        precios.add(3000.0);
+        precios.add(5000.0);
 
-            System.out.println("1 Consulta de saldo");
-            System.out.println("2 Ingresar dinero");
-            System.out.println("3 Retirar dinero");
-            System.out.println("4 Salir");
+        int maxProductos = 5;
 
-            System.out.println("\nIngrese la opcion que desea: ");
-            Scanner s = new Scanner(System.in);
-            opcion = s.nextInt();
+        System.out.println("Bienvenido a la Maquinita\n");
+        System.out.println("Lista de productos:");
 
-            switch(opcion){
-                case 1 -> System.out.println("Su saldo es:"+saldo);
-                case 2 -> {
-                    System.out.println("¿Cuanto dinero desea ingresar? valor: ");
-                    saldo = saldo + s.nextInt();
-                }
-                case 3 -> {
-                    System.out.println("¿Cuanto dinero desea retirar? valor: ");
-                    saldo = saldo - s.nextInt();
-                }
-                case 4 -> System.out.println("Cerrado");
-            }
-
-        }while(opcion!=5);*/
-
-        int opcion=0;
-        double valor = 0.0;
-        double calculo = 0.0;
-
-        System.out.println("Conversiones de grados");
-
-        System.out.println("1. Fahrenheit a Celsius");
-        System.out.println("2. Celsius a Fahrenheit");
-        System.out.println("3. Kelvin a Celsius");
-        System.out.println("4. Celsius a Kelvin");
-        System.out.println("5. Kelvin a Fahrenheit");
-        System.out.println("6. Fahrenheit a Kelvin");
-        System.out.println("7. Reaumur a Celsius");
-        System.out.println("8. Celsius a Reaumur");
-        System.out.println("9. Fahrenheit a Reaumur");
-        System.out.println("10. Reaumur a Fahrenheit");
-
-        System.out.println("\nIngrese la opcion que desea: ");
-        Scanner s = new Scanner(System.in);
-        opcion = s.nextInt();
-
-        switch (opcion){
-            case 1 ->{
-                System.out.println("1. Fahrenheit a Celsius\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = (5*(valor-32))/9;
-                System.out.println(valor+ " grados Fahrenheit a Celsius son : " + calculo);
-            }
-            case 2 ->{
-                System.out.println("2. Celsius a Fahrenheit\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = ((9*valor)/5)+32;
-                System.out.println(valor+ " grados Celsius a Fahrenheit son : " + calculo);
-            }
-            case 3 ->{
-                System.out.println("3. Kelvin a Celsius\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = valor - 273.15;
-                System.out.println(valor+ " grados Kelvin a Celsius son : " + calculo);
-            }
-            case 4 ->{
-                System.out.println("4. Celsius a Kelvin\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = valor + 273.15;
-                System.out.println(valor+ " grados Celsius a Kelvin son : " + calculo);
-            }
-            case 5 ->{
-                System.out.println("5. Kelvin a Fahrenheit\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = ((9*(valor-273.15))/5)+32;
-                System.out.println(valor+ " grados Kelvin a Fahrenheit son : " + calculo);
-            }
-            case 6 ->{
-                System.out.println("6. Fahrenheit a Kelvin\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = ((5*(valor-32))/9)+273.15;
-                System.out.println(valor+ " grados Fahrenheit a Kelvin son : " + calculo);
-            }
-            case 7 ->{
-                System.out.println("7. Reaumur a Celsius\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = (5*valor)/4;
-                System.out.println(valor+ " grados Reaumur a Celsius son : " + calculo);
-            }
-            case 8 ->{
-                System.out.println("8. Celsius a Reaumur\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = (4*valor)/5;
-                System.out.println(valor+ " grados Celsius a Reaumur son : " + calculo);
-            }
-            case 9 ->{
-                System.out.println("9. Fahrenheit a Reaumur\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = (4*(valor-32))/9;
-                System.out.println(valor+ " grados Fahrenheit a Reaumur son : " + calculo);
-            }
-            case 10 ->{
-                System.out.println("10. Reaumur a Fahrenheit\n");
-                System.out.println("Ingrese valor: ");
-                valor = s.nextDouble();
-                calculo = ((9*valor)/4)+32;
-                System.out.println(valor+ " grados Reaumur a Fahrenheit son : " + calculo);
-            }
-
+        for (int i = 0; i < productos.size(); i++) {
+            System.out.println(productos.get(i) + " -> $" + precios.get(i));
         }
 
+        System.out.print("Ingrese la cantidad de dinero que tiene: ");
+        double dineroDis = teclado.nextDouble();
+        double totalCompra = 0;
+
+        for (int i = 0; i < maxProductos; i++) {
+            System.out.print("Seleccione un producto (1-5) o 0 para salir: ");
+            int opcion = teclado.nextInt();
+
+            if (opcion == 0) {
+                break;
+            }
+
+            if (opcion < 1 || opcion > 5) {
+                System.out.println("Esta opcion no esta, intente de nuevo.");
+                i--;
+                continue;
+            }
+
+            double precioProducto = precios.get(opcion - 1);
+
+            if (totalCompra + precioProducto > dineroDis) {
+                System.out.println("Falta plata. No puede comprar este producto.");
+                continue;
+            }
+
+            totalCompra += precioProducto;
+            System.out.println("Agregado: " + productos.get(opcion - 1) + " --> $" + precioProducto);
+        }
+
+        double cambio = dineroDis - totalCompra;
+        System.out.println("Total a pagar: $" + totalCompra);
+        System.out.println("Cambio: $" + cambio);
+        System.out.println("Gracias por su compra señor");
     }
 }
