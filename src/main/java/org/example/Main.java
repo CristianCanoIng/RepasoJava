@@ -20,17 +20,17 @@ public class Main {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Piedra      Papel");
                 System.out.println("Punto para el jugador 2\n");
-                puntos2 += 1;
+                puntos2 = puntos2+1;
             } else if (nRandom1 == 1 && nRandom2 == 3) {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Piedra      Tijera");
                 System.out.println("Punto para el jugador 1\n");
-                puntos1 += 1;
+                puntos2 = puntos1+1;
             } else if (nRandom1 == 2 && nRandom2 == 1) {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Papel       Piedra");
                 System.out.println("Punto para el jugador 1\n");
-                puntos1 += 1;
+                puntos1 = puntos1+1;
             }else if (nRandom1 == 2 && nRandom2 == 2 ) {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Papel       Papel");
@@ -39,24 +39,34 @@ public class Main {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Papel       Tijera");
                 System.out.println("Punto para el jugador 2\n");
-                puntos2 += 1;
+                puntos2 = puntos2+1;
             } else if (nRandom1 == 3 && nRandom2 == 1) {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Tijera      Piedra");
                 System.out.println("Punto para el jugador 2\n");
-                puntos2 += 1;
+                puntos2 = puntos2+1;
             } else if (nRandom1 == 3 && nRandom2 == 2) {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Tijera       Papel");
                 System.out.println("Punto para el jugador 1\n");
-                puntos1 += 1;
+                puntos1 = puntos1+1;
             }else if (nRandom1 == 3 && nRandom2 == 3 ) {
                 System.out.println("Jugador      1           2");
                 System.out.println("             Tijera      Tijera");
                 System.out.println("Empate\n");
+            }else{
+                System.out.println("Error");
             }
             rondas+=1;
-        }while(puntos1 < 2 || puntos2 < 2);
+            System.out.println("puntos ");
+            System.out.println(puntos1 + "  " + puntos2);
+        }while(puntos1 != 2 && puntos2 != 2);
+
+        if(puntos1==2){
+            System.out.println("Ganador jugador 1");
+        }else{
+            System.out.println("Ganador jugador 2");
+        }
         System.out.printf("La cantidad de rondas fue: "+ rondas);
     }
 }
